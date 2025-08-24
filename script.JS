@@ -57,14 +57,27 @@ function play(){
         let player = getPlayerChoice();
         let computer = getComputerChoice();
 
+        function lose(){
+            console.log("Computer Wins!\n"+score(0,1))
+        }
+        function win(){
+            console.log("You Win!\n"+score(1,0))
+        }
+
         if (player === computer){
             console.log("It's a Draw!\n"+score())
         }else if (player === "Rock"){
-            computer === "Paper" ? console.log("Computer Wins!\n"+score(0,1)): console.log("You Win!\n"+score(1,0))
+            computer === "Paper" ? 
+            lose(): 
+            win()
         }else if (player === "Paper"){
-            computer === "Scissors" ? console.log("Computer Wins!\n"+score(0,1)): console.log("You Win!\n"+score(1,0))
+            computer === "Scissors" ? 
+            lose(): 
+            win()
         }else{
-            computer === "Rock" ? console.log("Computer Wins!\n"+score(0,1)): console.log("You Win!\n"+score(1,0));
+            computer === "Rock" ? 
+            lose(): 
+            win();
         }
     }
 }
